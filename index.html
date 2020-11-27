@@ -8,11 +8,31 @@
   </head>
   <body>
     <div class="container">
-      <div class="header">Header</div>
-      <div class="color-picker">Color Picker</div>
-      <div class="nested-container">nested-container</div>
-      <div class="slider">Slider</div>
-      <div class="footer">Footer</div>
+      <header class="header"><h1>Etch-A-Sketch</h1></header>
+      <div class="color-picker">
+        Color Picker:
+        <form>
+          <input
+            type="radio"
+            id="default"
+            name="color"
+            value="default"
+            checked="checked"
+          />
+          <label for="default">Default</label><br />
+          <input type="radio" id="random" name="color" value="random" />
+          <lable for="random">Random</lable><br />
+          <input
+            type="radio"
+            id="fade-to-black"
+            name="color"
+            value="fade-to-black"
+          />
+          <label for="fade-to-black">Fade To Black</label>
+        </form>
+      </div>
+      <div class="nested-container"></div>
+      <footer class="footer">Footer</footer>
     </div>
   </body>
   <script src="index.js"></script>
