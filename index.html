@@ -9,7 +9,8 @@
   <body>
     <div class="container">
       <header class="header"><h1>Etch-A-Sketch</h1></header>
-      <div class="color-picker">
+
+      <div class="color-picker color-picker-container">
         <p>Color Picker:</p>
         <form>
           <input
@@ -21,7 +22,7 @@
           />
           <label for="default">Default</label><br />
           <input type="radio" id="random" name="color" value="random" />
-          <lable for="random">Random</lable><br />
+          <label for="random">Random</label><br />
           <input
             type="radio"
             id="fade-to-black"
@@ -30,8 +31,15 @@
           />
           <label for="fade-to-black">Fade To Black</label>
         </form>
+        <button type="button">
+          Clear<span class="tooltiptext"
+            >If you choose an invalid entry 4 will be defaulted</span
+          >
+        </button>
       </div>
-      <div class="nested-container"></div>
+      <div class="center-container">
+        <div class="nested-container"></div>
+      </div>
       <footer class="footer">Footer</footer>
     </div>
   </body>

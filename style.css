@@ -4,10 +4,6 @@ body {
 
 .container {
   display: grid;
-  /* grid-template:
-    "header header"
-    "color-picker nested-container"
-    "footer footer"; */
   grid-template-rows: 100px 1fr 16px;
   grid-template-columns: 1fr 1fr;
   height: 100vh;
@@ -20,15 +16,28 @@ h1 {
   font-family: "Comic Sans MS", cursive, sans-serif;
   font-size: 40px;
   text-align: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  /* padding-top: 30px;
+  padding-bottom: 30px; */
 }
 .color-picker {
   grid-area: color-picker;
-  margin: 10px;
 }
+
+.color-picker-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr auto 1fr;
+  grid-template-areas: ". text ." ". form ." ". button .";
+}
+
 .color-picker > p {
   text-align: center;
+  grid-area: text;
+  align-self: end;
+}
+
+.center-container {
+  display: grid;
 }
 .nested-container {
   grid-area: nested-container;
@@ -39,28 +48,52 @@ h1 {
 
 .nested-container {
   display: grid;
-  grid-template-columns: repeat(var(--columns), auto);
+  grid-template-columns: repeat(var(--columns), 1fr);
   background-color: rgb(224, 16, 16);
   padding: 10px;
   height: 250px;
   width: 250px;
-  position: absolute;
-  top: 50%;
-  left: 75%;
-  transform: translate(-50%, -50%);
 }
 
 .nested-container > div {
-  background-color: rgb(160, 160, 160);
-  text-align: center;
-  padding: 10px 0;
-  font-size: 10px;
+  background-color: rgb(212, 212, 212);
+  cursor: pointer;
 }
 form {
+  grid-area: form;
   border: black 2px solid;
   border-radius: 5px;
-  padding: 10px;
 }
-form > :nth-child(n) {
-  margin: 20px;
+
+button {
+  grid-area: button;
+  margin: 10px 40px;
+  align-self: start;
+}
+button .tooltiptext {
+  visibility: hidden;
+  position: absolute;
+  width: 120px;
+  top: 75%;
+  left: 50%;
+  margin-left: -60px;
+}
+button:hover .tooltiptext {
+  visibility: visible;
+}
+@media screen and (min-width: 1000px) {
+  .nested-container {
+    height: 500px;
+    width: 500px;
+  }
+  .color-picker-container {
+    grid-template-rows: 1fr 2fr 1fr;
+  }
+}
+@media screen and (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "header" "color-picker" "nest-grid" "footer";
+  }
 }
