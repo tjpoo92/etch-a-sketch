@@ -9,7 +9,7 @@ body {
     "color-picker nested-container"
     "footer footer"; */
   grid-template-rows: 100px 1fr 16px;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1fr;
   height: 100vh;
   grid-template-areas: "header header" "color-picker nested-container" "footer footer";
 }
@@ -25,6 +25,10 @@ h1 {
 }
 .color-picker {
   grid-area: color-picker;
+  margin: 10px;
+}
+.color-picker > p {
+  text-align: center;
 }
 .nested-container {
   grid-area: nested-container;
@@ -55,4 +59,8 @@ h1 {
 form {
   border: black 2px solid;
   border-radius: 5px;
+  padding: 10px;
+}
+form > :nth-child(n) {
+  margin: 20px;
 }
