@@ -1,4 +1,4 @@
-## #Etch-A-Sketch
+# Etch-A-Sketch
 
 This project was to make a page very similar to the idea of a real-life etch-a-sketch, where when a point is drug across a space it would draw whatever a person wanted.
 
